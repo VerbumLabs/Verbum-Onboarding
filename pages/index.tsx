@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+
 function PlasmicLogo() {
   return (
     <svg
@@ -94,7 +95,6 @@ function Index() {
 <li><Link href="/signup">Signup - /signup</Link></li>
 <li><Link href="/seller-profile">SellerProfile - /seller-profile</Link></li>
           </ul>
-    
         <p><i>Note: Remember to remove this file if you introduce a Page component at the &#39;/&#39; path.</i></p>
       </header>
     </div>
