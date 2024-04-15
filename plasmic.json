@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -109,7 +109,8 @@
           "componentImportPath": "@plasmicpkgs/radix-ui"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -509,7 +510,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "8PtdGodUbexNYgkuyBUcWu",
@@ -531,7 +533,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -553,7 +556,8 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "enk3K4vZ6pmH6kVCoZJXGn",
@@ -575,7 +579,8 @@
           "componentImportPath": "@plasmicpkgs/react-youtube"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "gPere25tZXJ8DN5wLAbNNx",
@@ -724,20 +729,6 @@
           "componentType": "component"
         },
         {
-          "id": "SslDFE8uw30X",
-          "name": "SellerProfile",
-          "type": "managed",
-          "projectId": "gPere25tZXJ8DN5wLAbNNx",
-          "renderModuleFilePath": "plasmic/verbum_onboarding/PlasmicSellerProfile.tsx",
-          "importSpec": {
-            "modulePath": "../pages/seller-profile.tsx"
-          },
-          "cssFilePath": "plasmic/verbum_onboarding/PlasmicSellerProfile.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/seller-profile"
-        },
-        {
           "id": "z-inCbAmtHs6",
           "name": "VerbumFooter",
           "type": "managed",
@@ -749,6 +740,34 @@
           "cssFilePath": "plasmic/verbum_onboarding/PlasmicVerbumFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "SslDFE8uw30X",
+          "name": "UploadItem",
+          "type": "managed",
+          "projectId": "gPere25tZXJ8DN5wLAbNNx",
+          "renderModuleFilePath": "plasmic/verbum_onboarding/PlasmicUploadItem.tsx",
+          "importSpec": {
+            "modulePath": "../pages/UploadNewItem.tsx"
+          },
+          "cssFilePath": "plasmic/verbum_onboarding/PlasmicUploadItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/UploadNewItem"
+        },
+        {
+          "id": "-jEGBmZ3PoLc",
+          "name": "SellerProfile",
+          "type": "managed",
+          "projectId": "gPere25tZXJ8DN5wLAbNNx",
+          "renderModuleFilePath": "plasmic/verbum_onboarding/PlasmicSellerProfile.tsx",
+          "importSpec": {
+            "modulePath": "../pages/sellerprofile.tsx"
+          },
+          "cssFilePath": "plasmic/verbum_onboarding/PlasmicSellerProfile.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/sellerprofile"
         }
       ],
       "icons": [
@@ -883,6 +902,11 @@
           "id": "KnijGmzxj6Lp",
           "name": "metehan-gumusdag-z1f3d6_w7dA-unsplash.jpg",
           "filePath": "../public/plasmic/verbum_onboarding/images/metehanGumusdagZ1F3D6W7DAUnsplashjpg.jpg"
+        },
+        {
+          "id": "3Mm8TYJbap4a",
+          "name": "https___hypebeast.com_image_2022_11_fragment-design-air-jordan-1-sample-lv-leather-info-2 copy.jpg",
+          "filePath": "../public/plasmic/verbum_onboarding/images/httpsHypebeastcomImage202211FragmentDesignAirJordan1SampleLvLeatherInfo2Copyjpg.jpg"
         }
       ],
       "indirect": false,
