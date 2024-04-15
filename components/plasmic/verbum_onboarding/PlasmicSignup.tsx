@@ -401,7 +401,7 @@ function PlasmicSignup__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__drm7J
+                      sty.formField__ickzb
                     )}
                     label={"Email"}
                   >
@@ -412,7 +412,7 @@ function PlasmicSignup__RenderFunc(props: {
                   <FormItemWrapper
                     className={classNames(
                       "__wab_instance",
-                      sty.formField__yWPzX
+                      sty.formField__wVum
                     )}
                     label={"Password"}
                   >
@@ -432,7 +432,7 @@ function PlasmicSignup__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__wmDtg
+                        sty.text__eeua3
                       )}
                     >
                       {"Submit"}

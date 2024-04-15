@@ -308,7 +308,7 @@ function PlasmicSellorBuy__RenderFunc(props: {
                         $steps["goToSellerProfile"] = true
                           ? (() => {
                               const actionArgs = {
-                                destination: `/seller-profile`
+                                destination: `/UploadNewItem`
                               };
                               return (({ destination }) => {
                                 if (
