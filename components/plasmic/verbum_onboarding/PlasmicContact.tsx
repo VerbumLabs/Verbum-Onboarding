@@ -471,7 +471,11 @@ function PlasmicContact__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__tPfvT
+=======
+                        sty.formField___4IiTb
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Name"}
                       name={"name"}
@@ -479,14 +483,22 @@ function PlasmicContact__RenderFunc(props: {
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.input___2OyXn
+=======
+                          sty.input___0Czel
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__uyKWp
+=======
+                        sty.formField__vpLdJ
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       initialValue={``}
                       label={"Email"}
@@ -494,14 +506,22 @@ function PlasmicContact__RenderFunc(props: {
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.input__xDb2N
+=======
+                          sty.input__e8XD
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField___116S2
+=======
+                        sty.formField__gcfN9
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Message"}
                       name={"message"}
@@ -511,7 +531,14 @@ function PlasmicContact__RenderFunc(props: {
                       />
                     </FormItemWrapper>
                     <AntdButton
+<<<<<<< HEAD
                       className={classNames("__wab_instance", sty.button__oEdS)}
+=======
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__nriRy
+                      )}
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       submitsForm={true}
                       type={"primary"}
                     >
@@ -519,7 +546,11 @@ function PlasmicContact__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
+<<<<<<< HEAD
                           sty.text__c5RY3
+=======
+                          sty.text__yyYz3
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       >
                         {"Submit"}

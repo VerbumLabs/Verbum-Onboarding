@@ -430,42 +430,66 @@ function PlasmicSellerVerification__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__rtdr4
+=======
+                        sty.formField__ytnSc
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.input__yyAeM
+=======
+                          sty.input__pnMi9
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__huYHe
+=======
+                        sty.formField__ho88
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.input__rukpF
+=======
+                          sty.input___1FFpd
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__r2Rsf
+=======
+                        sty.formField___3SgtR
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.input__gpIhZ
+=======
+                          sty.input__tnJys
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
@@ -478,7 +502,11 @@ function PlasmicSellerVerification__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
+<<<<<<< HEAD
                           sty.text__w5ScZ
+=======
+                          sty.text__fvGjg
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       >
                         {"Submit"}

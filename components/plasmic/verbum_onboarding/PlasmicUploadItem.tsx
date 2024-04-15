@@ -459,7 +459,11 @@ function PlasmicUploadItem__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__cl5Yf
+=======
+                        sty.formField___0Ky0
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Item Name"}
                       name={"name"}
@@ -468,14 +472,22 @@ function PlasmicUploadItem__RenderFunc(props: {
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.input__idlag
+=======
+                          sty.input__v32BK
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField___1GKS
+=======
+                        sty.formField__rkHh2
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Brand"}
                       rules={[
@@ -487,14 +499,22 @@ function PlasmicUploadItem__RenderFunc(props: {
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.input__bmj1X
+=======
+                          sty.input__mEumo
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__mT5Xv
+=======
+                        sty.formField__wCOk
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Price (USD)"}
                       rules={[
@@ -514,7 +534,11 @@ function PlasmicUploadItem__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__dnijL
+=======
+                        sty.formField__ghRwz
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       initialValue={"5%"}
                       label={"Royalty Percentage"}
@@ -523,7 +547,11 @@ function PlasmicUploadItem__RenderFunc(props: {
                       <AntdSelect
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.select__pcg2M
+=======
+                          sty.select__xGv3U
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                         defaultStylesClassName={classNames(
                           projectcss.root_reset,
@@ -546,13 +574,21 @@ function PlasmicUploadItem__RenderFunc(props: {
                           return __composite;
                         })()}
                         placeholder={"Select..."}
+<<<<<<< HEAD
                         popupScopeClassName={sty["select__pcg2M__popup"]}
+=======
+                        popupScopeClassName={sty["select__xGv3U__popup"]}
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__vu0Hy
+=======
+                        sty.formField__kyW0O
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Description"}
                       name={"message"}
@@ -565,7 +601,11 @@ function PlasmicUploadItem__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__n6Igv
+=======
+                        sty.formField___0DsZf
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Condition"}
                       rules={[{ ruleType: "required" }]}
@@ -573,7 +613,11 @@ function PlasmicUploadItem__RenderFunc(props: {
                       <AntdSelect
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.select___4Zet2
+=======
+                          sty.select__jaDCw
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                         defaultStylesClassName={classNames(
                           projectcss.root_reset,
@@ -597,13 +641,21 @@ function PlasmicUploadItem__RenderFunc(props: {
                           return __composite;
                         })()}
                         placeholder={"Select..."}
+<<<<<<< HEAD
                         popupScopeClassName={sty["select___4Zet2__popup"]}
+=======
+                        popupScopeClassName={sty["select__jaDCw__popup"]}
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
+<<<<<<< HEAD
                         sty.formField__xpPc8
+=======
+                        sty.formField__d6UN7
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Listing Duration (months)"}
                       rules={[{ ruleType: "required" }]}
@@ -611,7 +663,11 @@ function PlasmicUploadItem__RenderFunc(props: {
                       <AntdSelect
                         className={classNames(
                           "__wab_instance",
+<<<<<<< HEAD
                           sty.select__edPdn
+=======
+                          sty.select__z7Gz
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                         defaultStylesClassName={classNames(
                           projectcss.root_reset,
@@ -650,6 +706,7 @@ function PlasmicUploadItem__RenderFunc(props: {
                           return __composite;
                         })()}
                         placeholder={"Select..."}
+<<<<<<< HEAD
                         popupScopeClassName={sty["select__edPdn__popup"]}
                       />
                     </FormItemWrapper>
@@ -658,6 +715,13 @@ function PlasmicUploadItem__RenderFunc(props: {
                         "__wab_instance",
                         sty.button__nGgXz
                       )}
+=======
+                        popupScopeClassName={sty["select__z7Gz__popup"]}
+                      />
+                    </FormItemWrapper>
+                    <AntdButton
+                      className={classNames("__wab_instance", sty.button__vQY)}
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       submitsForm={true}
                       type={"primary"}
                     >
@@ -665,7 +729,11 @@ function PlasmicUploadItem__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
+<<<<<<< HEAD
                           sty.text__tz5B
+=======
+                          sty.text__uJbYn
+>>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       >
                         {"Submit"}
