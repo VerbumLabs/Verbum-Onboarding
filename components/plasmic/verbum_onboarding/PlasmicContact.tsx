@@ -471,7 +471,7 @@ function PlasmicContact__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__zIKd
+                        sty.formField__tPfvT
                       )}
                       label={"Name"}
                       name={"name"}
@@ -479,14 +479,14 @@ function PlasmicContact__RenderFunc(props: {
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-                          sty.input__tv6Wu
+                          sty.input___2OyXn
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ne0S6
+                        sty.formField__uyKWp
                       )}
                       initialValue={``}
                       label={"Email"}
@@ -494,14 +494,14 @@ function PlasmicContact__RenderFunc(props: {
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-                          sty.input__wvkzw
+                          sty.input__xDb2N
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jrYzt
+                        sty.formField___116S2
                       )}
                       label={"Message"}
                       name={"message"}
@@ -511,10 +511,7 @@ function PlasmicContact__RenderFunc(props: {
                       />
                     </FormItemWrapper>
                     <AntdButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__ukY8S
-                      )}
+                      className={classNames("__wab_instance", sty.button__oEdS)}
                       submitsForm={true}
                       type={"primary"}
                     >
@@ -522,7 +519,7 @@ function PlasmicContact__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__dAq4M
+                          sty.text__c5RY3
                         )}
                       >
                         {"Submit"}

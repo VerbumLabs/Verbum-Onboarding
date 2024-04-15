@@ -16,6 +16,7 @@ import * as React from "react";
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
+import Wallet from "../../ThirdWebWallet";
 
 import {
   Flex as Flex__,
@@ -186,6 +187,10 @@ function PlasmicComingSoon__RenderFunc(props: {
                 }}
               />
             </div>
+            <box style={{ paddingBottom: '20px', paddingRight: '24px' }}>
+              <div> <Wallet /> 
+              </div>
+            </box>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg___6XhRa)}
               onClick={async event => {

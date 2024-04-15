@@ -430,42 +430,42 @@ function PlasmicSellerVerification__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ba9T4
+                        sty.formField__rtdr4
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-                          sty.input__qk3Bu
+                          sty.input__yyAeM
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__pLypd
+                        sty.formField__huYHe
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-                          sty.input__w8Dfo
+                          sty.input__rukpF
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__skUb0
+                        sty.formField__r2Rsf
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-                          sty.input__nNaBz
+                          sty.input__gpIhZ
                         )}
                       />
                     </FormItemWrapper>
@@ -478,7 +478,7 @@ function PlasmicSellerVerification__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__l01OQ
+                          sty.text__w5ScZ
                         )}
                       >
                         {"Submit"}

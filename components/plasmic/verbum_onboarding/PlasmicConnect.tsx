@@ -276,8 +276,29 @@ function PlasmicConnect__RenderFunc(props: {
               </h1>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__wvjjV)} />
+          <div className={classNames(projectcss.all, sty.freeBox__wvjjV)}>
+            <div className={classNames(projectcss.all, sty.freeBox__bfS2Z)} />
 
+            <div className={classNames(projectcss.all, sty.freeBox__klbwM)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__ir6WT)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/verbum_onboarding/images/httpsHypebeastcomImage202211FragmentDesignAirJordan1SampleLvLeatherInfo2Copyjpg.jpg",
+                  fullWidth: 997,
+                  fullHeight: 851,
+                  aspectRatio: undefined
+                }}
+              />
+            </div>
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__gCKvE)}>
             <div
               className={classNames(
