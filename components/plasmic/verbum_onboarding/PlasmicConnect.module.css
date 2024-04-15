@@ -136,14 +136,46 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   max-width: 100%;
   margin-top: calc(56px + 0px) !important;
   min-width: 0;
   padding: 8px;
+}
+.freeBox__bfS2Z {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.freeBox__klbwM {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.img__ir6WT {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__ir6WT > picture > img {
+  object-fit: cover;
 }
 .freeBox__gCKvE {
   display: flex;

@@ -471,7 +471,7 @@ function PlasmicContact__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__zIKd
+                        sty.formField__jjvr
                       )}
                       label={"Name"}
                       name={"name"}
@@ -479,14 +479,14 @@ function PlasmicContact__RenderFunc(props: {
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-                          sty.input__tv6Wu
+                          sty.input__fjI88
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ne0S6
+                        sty.formField__eDrUw
                       )}
                       initialValue={``}
                       label={"Email"}
@@ -494,14 +494,14 @@ function PlasmicContact__RenderFunc(props: {
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-                          sty.input__wvkzw
+                          sty.input__kvcq
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jrYzt
+                        sty.formField__f04Ee
                       )}
                       label={"Message"}
                       name={"message"}
@@ -513,7 +513,7 @@ function PlasmicContact__RenderFunc(props: {
                     <AntdButton
                       className={classNames(
                         "__wab_instance",
-                        sty.button__ukY8S
+                        sty.button__aEbqg
                       )}
                       submitsForm={true}
                       type={"primary"}
@@ -522,7 +522,7 @@ function PlasmicContact__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__dAq4M
+                          sty.text__ydXu
                         )}
                       >
                         {"Submit"}
