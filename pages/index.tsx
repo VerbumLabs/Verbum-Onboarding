@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Homepage from "./onboarding";
 
 function PlasmicLogo() {
   return (
@@ -63,41 +64,42 @@ function PlasmicLogo() {
   );
 }
 
+//     <div style={{ width: "100%", padding: "100px", alignContent: "center" }}>
+//       <header>
+//         <PlasmicLogo />
+//         <h1 style={{ margin: 0 }}>
+//           Welcome to Plasmic!
+//         </h1>
+//         <h4>
+//           <a
+//             style={{ color: "blue" }}
+//             href="https://www.plasmic.app/learn/"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//           >
+//             Learn Plasmic
+//           </a>
+//         </h4>
+        
+//           <h3>Your pages:</h3>
+//           <ul>
+//             <li><Link href="/onboarding">Homepage - /onboarding</Link></li>
+// <li><Link href="/contact">Contact - /contact</Link></li>
+// <li><Link href="/careers">Careers - /careers</Link></li>
+// <li><Link href="/sell-or-buy">SellorBuy - /sell-or-buy</Link></li>
+// <li><Link href="/seller-verification">SellerVerification - /seller-verification</Link></li>
+// <li><Link href="/comingsoon">ComingSoon - /comingsoon</Link></li>
+// <li><Link href="/connect">Connect - /connect</Link></li>
+// <li><Link href="/signup">Signup - /signup</Link></li>
+// <li><Link href="/seller-profile">SellerProfile - /seller-profile</Link></li>
+//           </ul>
+//         <p><i>Note: Remember to remove this file if you introduce a Page component at the &#39;/&#39; path.</i></p>
+//       </header>
+//     </div>
 
 function Index() {
   return (
-    <div style={{ width: "100%", padding: "100px", alignContent: "center" }}>
-      <header>
-        <PlasmicLogo />
-        <h1 style={{ margin: 0 }}>
-          Welcome to Plasmic!
-        </h1>
-        <h4>
-          <a
-            style={{ color: "blue" }}
-            href="https://www.plasmic.app/learn/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Plasmic
-          </a>
-        </h4>
-        
-          <h3>Your pages:</h3>
-          <ul>
-            <li><Link href="/onboarding">Homepage - /onboarding</Link></li>
-<li><Link href="/contact">Contact - /contact</Link></li>
-<li><Link href="/careers">Careers - /careers</Link></li>
-<li><Link href="/sell-or-buy">SellorBuy - /sell-or-buy</Link></li>
-<li><Link href="/seller-verification">SellerVerification - /seller-verification</Link></li>
-<li><Link href="/comingsoon">ComingSoon - /comingsoon</Link></li>
-<li><Link href="/connect">Connect - /connect</Link></li>
-<li><Link href="/signup">Signup - /signup</Link></li>
-<li><Link href="/seller-profile">SellerProfile - /seller-profile</Link></li>
-          </ul>
-        <p><i>Note: Remember to remove this file if you introduce a Page component at the &#39;/&#39; path.</i></p>
-      </header>
-    </div>
+    <Homepage/>
   );
 }
 

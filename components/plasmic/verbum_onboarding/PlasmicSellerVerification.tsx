@@ -16,6 +16,7 @@ import * as React from "react";
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
+import Wallet from "../../ThirdWebWallet";
 
 import {
   Flex as Flex__,
@@ -225,8 +226,44 @@ function PlasmicSellerVerification__RenderFunc(props: {
                   fullHeight: 1792,
                   aspectRatio: undefined
                 }}
+                onClick={ async event => {
+                  const $steps = {};
+
+                  $steps["goToHome"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination: `/onboarding`
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToHome"] != null &&
+                    typeof $steps["goToHome"] === "object" &&
+                    typeof $steps["goToHome"].then === "function"
+                  ) {
+                    $steps["goToHome"] = await $steps[
+                      "goToHome"
+                    ];
+                  }
+                }}
               />
             </div>
+            <box style={{ paddingBottom: '20px', paddingRight: '24px' }}>
+              <div> <Wallet /> 
+              </div>
+            </box>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg__wvJwh)}
               onClick={async event => {
@@ -430,66 +467,42 @@ function PlasmicSellerVerification__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-<<<<<<< HEAD
                         sty.formField__rtdr4
-=======
-                        sty.formField__ytnSc
->>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-<<<<<<< HEAD
                           sty.input__yyAeM
-=======
-                          sty.input__pnMi9
->>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-<<<<<<< HEAD
                         sty.formField__huYHe
-=======
-                        sty.formField__ho88
->>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-<<<<<<< HEAD
                           sty.input__rukpF
-=======
-                          sty.input___1FFpd
->>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-<<<<<<< HEAD
                         sty.formField__r2Rsf
-=======
-                        sty.formField___3SgtR
->>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                       )}
                       label={"Link"}
                     >
                       <AntdInput
                         className={classNames(
                           "__wab_instance",
-<<<<<<< HEAD
                           sty.input__gpIhZ
-=======
-                          sty.input__tnJys
->>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       />
                     </FormItemWrapper>
@@ -502,11 +515,7 @@ function PlasmicSellerVerification__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-<<<<<<< HEAD
                           sty.text__w5ScZ
-=======
-                          sty.text__fvGjg
->>>>>>> 33e76478e6871b89fe857b444c6210394c920a7c
                         )}
                       >
                         {"Submit"}

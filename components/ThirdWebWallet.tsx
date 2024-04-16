@@ -1,3 +1,5 @@
+// src/App.js
+import { WalletProvider } from './WalletContext';
 import {
   ThirdwebProvider,
   ConnectWallet,
@@ -6,7 +8,6 @@ import {
   coinbaseWallet,
   walletConnect,
   smartWallet,
-
 } from "@thirdweb-dev/react";
 import { Optimism } from "@thirdweb-dev/chains";
 
@@ -18,23 +19,26 @@ const smartWalletOptions = {
 export default function App() {
   return (
     <ThirdwebProvider
-      activeChain={Optimism}
-      clientId="aeea0e409104d28890235e065a914b03"
-      supportedWallets={[
-        metamaskWallet({ recommended: true }),
-        smartWallet(
-          embeddedWallet({recommended: true}),
-          smartWalletOptions
-        ),
-        coinbaseWallet(),
-        walletConnect(),
-      ]}
-    >
-      <ConnectWallet
-        theme={"dark"}
-        modalSize={"wide"}
-        btnTitle="Connect"
-      />
-    </ThirdwebProvider>
+    activeChain={Optimism}
+    clientId="aeea0e409104d28890235e065a914b03"
+    supportedWallets={[
+      metamaskWallet({ recommended: true }),
+      smartWallet(
+        embeddedWallet({ recommended: true }),
+        smartWalletOptions
+      ),
+      coinbaseWallet(),
+      walletConnect(),
+    ]}
+  >    <WalletProvider>
+     
+          <ConnectWallet
+            theme={"dark"}
+            modalSize={"wide"}
+            btnTitle="Connect"
+          />
+    </WalletProvider>
+      </ThirdwebProvider>
   );
 }
+

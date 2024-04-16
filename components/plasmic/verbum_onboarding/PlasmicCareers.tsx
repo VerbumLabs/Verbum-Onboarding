@@ -16,6 +16,7 @@ import * as React from "react";
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
+import Wallet from "../../ThirdWebWallet";
 
 import {
   Flex as Flex__,
@@ -232,86 +233,39 @@ function PlasmicCareers__RenderFunc(props: {
                   fullHeight: 1792,
                   aspectRatio: undefined
                 }}
+                onClick={async event => {
+                  const $steps = {};
+  
+                  $steps["goToHomepage"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/onboarding` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToHomepage"] != null &&
+                    typeof $steps["goToHomepage"] === "object" &&
+                    typeof $steps["goToHomepage"].then === "function"
+                  ) {
+                    $steps["goToHomepage"] = await $steps["goToHomepage"];
+                  }
+                }}
               />
             </div>
-            <Button
-              className={classNames("__wab_instance", sty.button__wzZu)}
-              color={"white"}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToConnect"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/connect` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToConnect"] != null &&
-                  typeof $steps["goToConnect"] === "object" &&
-                  typeof $steps["goToConnect"].then === "function"
-                ) {
-                  $steps["goToConnect"] = await $steps["goToConnect"];
-                }
-              }}
-              submitsForm={true}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__iQIhc
-                )}
-              >
-                {"Connect"}
-              </div>
-            </Button>
-            <Button
-              className={classNames("__wab_instance", sty.button__ngqj)}
-              color={"clear"}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToSignup"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/signup` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToSignup"] != null &&
-                  typeof $steps["goToSignup"] === "object" &&
-                  typeof $steps["goToSignup"].then === "function"
-                ) {
-                  $steps["goToSignup"] = await $steps["goToSignup"];
-                }
-              }}
-              submitsForm={true}
-            >
-              {"Signup"}
-            </Button>
+            <div>
+              <Wallet />
+            </div>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg__y0H71)}
               onClick={async event => {

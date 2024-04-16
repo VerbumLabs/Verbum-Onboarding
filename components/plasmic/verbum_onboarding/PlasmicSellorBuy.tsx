@@ -16,6 +16,27 @@ import * as React from "react";
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
+import Wallet from "../../ThirdWebWallet";
+import { useWallet } from "../../WalletContext.js";
+import { useAddress } from "@thirdweb-dev/react";
+import { getVerificationStatus } from "../../../scripts/get-verification-status";
+import { useState } from 'react';
+// src/App.js
+import {
+  ThirdwebProvider,
+  ConnectWallet,
+  metamaskWallet,
+  embeddedWallet,
+  coinbaseWallet,
+  walletConnect,
+  smartWallet,
+} from "@thirdweb-dev/react";
+import { Optimism } from "@thirdweb-dev/chains";
+
+const smartWalletOptions = {
+  factoryAddress: "0xd7CC4fe0FCAcD12092155F5E1777740EFfcb1329",
+  gasless: true
+};
 
 import {
   Flex as Flex__,
@@ -120,6 +141,30 @@ function PlasmicSellorBuy__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
+  const address = useAddress();
+  const wallet = useWallet();
+  console.log("wallet uplod wallet", wallet, address);
+  const walletAddress = wallet ? wallet.address : null;
+  const [isConnected, setIsConnected] = useState(false);
+  const handleRedirect = async () => {
+    try {
+      const verified = await getVerificationStatus(wallet);
+      console.log(wallet);
+      console.log("Verification status: ", verified);
+
+      // Redirect based on the verification status
+      if (verified) {
+        __nextRouter.push('/seller-profile');
+      } else {
+        __nextRouter.push('/seller-verification');
+      }
+    } catch (error) {
+      console.error("Failed to check verification status:", error);
+    }
+    setIsConnected(true); // Hide the wallet connect UI after connection
+  };
+  
+
   return (
     <React.Fragment>
       <Head>
@@ -183,8 +228,44 @@ function PlasmicSellorBuy__RenderFunc(props: {
                   fullHeight: 1792,
                   aspectRatio: undefined
                 }}
+                onClick={ async event => {
+                  const $steps = {};
+
+                  $steps["goToHome"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination: `/onboarding`
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToHome"] != null &&
+                    typeof $steps["goToHome"] === "object" &&
+                    typeof $steps["goToHome"].then === "function"
+                  ) {
+                    $steps["goToHome"] = await $steps[
+                      "goToHome"
+                    ];
+                  }
+                }}
               />
             </div>
+            <box style={{ paddingBottom: '20px', paddingRight: '24px' }}>
+              <div> <Wallet /> 
+              </div>
+            </box>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg__doOa7)}
               onClick={async event => {
@@ -297,46 +378,57 @@ function PlasmicSellorBuy__RenderFunc(props: {
                     >
                       {"Sign-up and onboard your items to Verbum. "}
                     </div>
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__qyrCs
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["goToSellerProfile"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                destination: `/UploadNewItem`
-                              };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
+                    <div>
+                        {
+                          !walletAddress ? (          
+                            <ThirdwebProvider
+                                activeChain={Optimism}
+                                clientId="aeea0e409104d28890235e065a914b03"
+                                supportedWallets={[
+                                  metamaskWallet({ recommended: true }),
+                                  smartWallet(
+                                    embeddedWallet({ recommended: true }),
+                                    smartWalletOptions
+                                  ),
+                                  coinbaseWallet(),
+                                  walletConnect(),
+                                ]}
+                              > 
+                                      <ConnectWallet
+                                        theme={"dark"}
+                                        modalSize={"wide"}
+                                        btnTitle="Sell on Verbum"
+                                        font={"inherit"}
+                                        onConnect={handleRedirect}
+                                      />
+                              </ThirdwebProvider>
+                          ) : (
+                            // Otherwise, render the Button component
+                            <Button
+                              className={classNames("__wab_instance", sty.button__qyrCs)}
+                              onClick={async event => {
+                                try {
+                                  const verified = await getVerificationStatus(walletAddress);
+                                  console.log(walletAddress);
+                                  console.log("HI ITS ME HODOL, its the wallet verification status!!!", verified);
+                                  
+                                  // Based on the verification status, redirect to the appropriate page
+                                  if (verified) {
+                                    __nextRouter.push('/seller-profile');
+                                  } else {
+                                    __nextRouter.push('/seller-verification');
+                                  }
+                                } catch (error) {
+                                  console.error("Failed to check verification status:", error);
+                                  // Handle errors, possibly navigate to an error page or display a message
                                 }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["goToSellerProfile"] != null &&
-                          typeof $steps["goToSellerProfile"] === "object" &&
-                          typeof $steps["goToSellerProfile"].then === "function"
-                        ) {
-                          $steps["goToSellerProfile"] = await $steps[
-                            "goToSellerProfile"
-                          ];
+                              }}
+                            >
+                              {"Sell on Verbum"}
+                            </Button>
+                          )
                         }
-                      }}
-                    >
-                      {"Sell on Verbum"}
-                    </Button>
+                  </div>
                   </div>
                   <div
                     className={classNames(projectcss.all, sty.freeBox___9IggF)}
@@ -360,49 +452,89 @@ function PlasmicSellorBuy__RenderFunc(props: {
                     >
                       {"Buy and trade on the value of luxury goods."}
                     </div>
-                    <Button
-                      className={classNames("__wab_instance", sty.button__raDB)}
-                      onClick={async event => {
-                        const $steps = {};
+                    <div>
+                        {
+                          !walletAddress ? (          
+                            <ThirdwebProvider
+                                activeChain={Optimism}
+                                clientId="aeea0e409104d28890235e065a914b03"
+                                supportedWallets={[
+                                  metamaskWallet({ recommended: true }),
+                                  smartWallet(
+                                    embeddedWallet({ recommended: true }),
+                                    smartWalletOptions
+                                  ),
+                                  coinbaseWallet(),
+                                  walletConnect(),
+                                ]}
+                              > 
+                                      <ConnectWallet
+                                        theme={"dark"}
+                                        modalSize={"wide"}
+                                        btnTitle="Buy on Verbum"
+                                        onConnect={async () => {
+                                          try {
+                                            const verified = await getVerificationStatus(walletAddress);
+                                            console.log(walletAddress);
+                                            console.log("Verification status: ", verified);
+                                      
+                                            // Redirect based on the verification status
+                                            __nextRouter.push('/comingsoon');
+                                          } catch (error) {
+                                            console.error("Failed to check verification status:", error);
+                                            // Optionally handle errors, such as showing an error message
+                                          }
+                                        }}
+                                      />
+                              </ThirdwebProvider>
+                          ) : (
+                            // Otherwise, render the Button component
+                            <Button
+                              className={classNames("__wab_instance", sty.button__raDB)}
+                              onClick={async event => {
+                                const $steps = {};
 
-                        $steps["goToComingSoon"] = true
-                          ? (() => {
-                              const actionArgs = { destination: `/comingsoon` };
-                              return (({ destination }) => {
+                                $steps["goToComingSoon"] = true
+                                  ? (() => {
+                                      const actionArgs = { destination: `/comingsoon` };
+                                      return (({ destination }) => {
+                                        if (
+                                          typeof destination === "string" &&
+                                          destination.startsWith("#")
+                                        ) {
+                                          document
+                                            .getElementById(destination.substr(1))
+                                            .scrollIntoView({ behavior: "smooth" });
+                                        } else {
+                                          __nextRouter?.push(destination);
+                                        }
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
                                 if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
+                                  $steps["goToComingSoon"] != null &&
+                                  typeof $steps["goToComingSoon"] === "object" &&
+                                  typeof $steps["goToComingSoon"].then === "function"
                                 ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
+                                  $steps["goToComingSoon"] = await $steps[
+                                    "goToComingSoon"
+                                  ];
                                 }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["goToComingSoon"] != null &&
-                          typeof $steps["goToComingSoon"] === "object" &&
-                          typeof $steps["goToComingSoon"].then === "function"
-                        ) {
-                          $steps["goToComingSoon"] = await $steps[
-                            "goToComingSoon"
-                          ];
+                              }}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___7Kxbw
+                                )}
+                              >
+                                {"Buy on Verbum"}
+                              </div>
+                            </Button>
+                          )
                         }
-                      }}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___7Kxbw
-                        )}
-                      >
-                        {"Buy on Verbum"}
-                      </div>
-                    </Button>
+                  </div>
                   </div>
                 </div>
               </div>

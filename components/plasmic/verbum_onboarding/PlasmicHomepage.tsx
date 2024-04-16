@@ -310,9 +310,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["goToSignup"] = true
+                    $steps["goToSellorBuy"] = true
                       ? (() => {
-                          const actionArgs = { destination: `/signup` };
+                          const actionArgs = { destination: `/sell-or-buy` };
                           return (({ destination }) => {
                             if (
                               typeof destination === "string" &&
@@ -328,11 +328,11 @@ function PlasmicHomepage__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["goToSignup"] != null &&
-                      typeof $steps["goToSignup"] === "object" &&
-                      typeof $steps["goToSignup"].then === "function"
+                      $steps["goToSellorBuy"] != null &&
+                      typeof $steps["goToSellorBuy"] === "object" &&
+                      typeof $steps["goToSellorBuy"].then === "function"
                     ) {
-                      $steps["goToSignup"] = await $steps["goToSignup"];
+                      $steps["goToSellorBuy"] = await $steps["goToSellorBuy"];
                     }
                   }}
                 >
@@ -812,9 +812,9 @@ function PlasmicHomepage__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["goToSignup"] = true
+                $steps["goToSellorBuy"] = true
                   ? (() => {
-                      const actionArgs = { destination: `/signup` };
+                      const actionArgs = { destination: `/sell-or-buy` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -830,11 +830,11 @@ function PlasmicHomepage__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["goToSignup"] != null &&
-                  typeof $steps["goToSignup"] === "object" &&
-                  typeof $steps["goToSignup"].then === "function"
+                  $steps["goToSellorBuy"] != null &&
+                  typeof $steps["goToSellorBuy"] === "object" &&
+                  typeof $steps["goToSellorBuy"].then === "function"
                 ) {
-                  $steps["goToSignup"] = await $steps["goToSignup"];
+                  $steps["goToSellorBuy"] = await $steps["goToSellorBuy"];
                 }
               }}
               submitsForm={true}

@@ -217,6 +217,7 @@
 }
 .input__fkMaz:global(.__wab_instance) {
   max-width: 100%;
+  color: #000000;
   object-fit: cover;
 }
 .formField__sPfm:global(.__wab_instance) {
@@ -226,6 +227,7 @@
 }
 .input__gDx1M:global(.__wab_instance) {
   max-width: 100%;
+  color: #000000;
   object-fit: cover;
 }
 .formField___190Fh:global(.__wab_instance) {
@@ -235,6 +237,7 @@
 }
 .textArea:global(.__wab_instance) {
   max-width: 100%;
+  color: #000000;
   object-fit: cover;
 }
 .button__d1N90:global(.__wab_instance) {
