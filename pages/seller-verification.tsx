@@ -6,6 +6,21 @@ import GlobalContextsProvider from "../components/plasmic/verbum_onboarding/Plas
 import { ScreenVariantProvider } from "../components/plasmic/verbum_onboarding/PlasmicGlobalVariant__Screen";
 import { PlasmicSellerVerification } from "../components/plasmic/verbum_onboarding/PlasmicSellerVerification";
 import { useRouter } from "next/router";
+import {
+  ThirdwebProvider,
+  ConnectWallet,
+  metamaskWallet,
+  embeddedWallet,
+  coinbaseWallet,
+  walletConnect,
+  smartWallet,
+} from "@thirdweb-dev/react";
+import { Optimism } from "@thirdweb-dev/chains";
+const smartWalletOptions = {
+  factoryAddress: "0xd7CC4fe0FCAcD12092155F5E1777740EFfcb1329",
+  gasless: true
+};
+import { WalletProvider } from '../components/WalletContext';
 
 function SellerVerification() {
   // Use PlasmicSellerVerification to render this component as it was
@@ -25,15 +40,31 @@ function SellerVerification() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   return (
-    <GlobalContextsProvider>
-      <PageParamsProvider__
-        route={useRouter()?.pathname}
-        params={useRouter()?.query}
-        query={useRouter()?.query}
-      >
-        <PlasmicSellerVerification />
-      </PageParamsProvider__>
-    </GlobalContextsProvider>
+    <ThirdwebProvider
+    activeChain={Optimism}
+    clientId="aeea0e409104d28890235e065a914b03"
+    supportedWallets={[
+      metamaskWallet({ recommended: true }),
+      smartWallet(
+        embeddedWallet({ recommended: true }),
+        smartWalletOptions
+      ),
+      coinbaseWallet(),
+      walletConnect(),
+    ]}
+  > 
+      <WalletProvider>
+          <GlobalContextsProvider>
+            <PageParamsProvider__
+              route={useRouter()?.pathname}
+              params={useRouter()?.query}
+              query={useRouter()?.query}
+            >
+            <PlasmicSellerVerification />
+          </PageParamsProvider__>
+        </GlobalContextsProvider>
+      </WalletProvider>
+    </ThirdwebProvider>
   );
 }
 

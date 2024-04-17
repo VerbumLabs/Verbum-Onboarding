@@ -6,7 +6,7 @@ export function submitItem(itemData: any): Promise<any> {
       },
       body: JSON.stringify(itemData)
     }).then(response => {
-      if (!response.ok) {
+      if (response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.json();

@@ -165,6 +165,14 @@
 .input__yyAeM:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+  border-radius: 8px;
+  background-color: #16161D;
+  background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2230%22%20height%3D%2231%22%20viewBox%3D%220%200%2060%2061%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22fill-dark-1%20fill-dark-3%20js-on-edit%22%20sf-label%3D%22SVG%20icon%22%20sf-type%3D%22svg%22%20sf-uid%3D%2215%22%20draggable%3D%22true%22%3E%3Cpath%20d%3D%22M25.116%2035.5C21.3511%2031.7205%2021.6902%2025.2522%2025.8735%2021.0527L37.9925%208.88655C42.1757%204.68707%2048.619%204.34662%2052.384%208.12615C56.149%2011.9057%2055.8098%2018.3739%2051.6265%2022.5734L45.567%2028.6565%22%20stroke%3D%22%231C274C%22%20stroke-width%3D%223.75%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M34.884%2025.5C38.649%2029.2795%2038.3098%2035.7478%2034.1265%2039.9473L28.067%2046.0302L22.0075%2052.1135C17.8242%2056.313%2011.3809%2056.6532%207.616%2052.8737C3.85108%2049.0942%204.19023%2042.626%208.37348%2038.4265L14.4331%2032.3432%22%20stroke%3D%22%231C274C%22%20stroke-width%3D%223.75%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: 10px center; /* Adjust as needed */
+  padding-left: 45px; /* Give space for the icon */
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 .formField__huYHe:global(.__wab_instance) {
   width: 100%;
@@ -174,6 +182,14 @@
 .input__rukpF:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+  border-radius: 8px;
+  background-color: #16161D;
+  background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2230%22%20height%3D%2231%22%20viewBox%3D%220%200%2060%2061%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22fill-dark-1%20fill-dark-3%20js-on-edit%22%20sf-label%3D%22SVG%20icon%22%20sf-type%3D%22svg%22%20sf-uid%3D%2215%22%20draggable%3D%22true%22%3E%3Cpath%20d%3D%22M25.116%2035.5C21.3511%2031.7205%2021.6902%2025.2522%2025.8735%2021.0527L37.9925%208.88655C42.1757%204.68707%2048.619%204.34662%2052.384%208.12615C56.149%2011.9057%2055.8098%2018.3739%2051.6265%2022.5734L45.567%2028.6565%22%20stroke%3D%22%231C274C%22%20stroke-width%3D%223.75%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M34.884%2025.5C38.649%2029.2795%2038.3098%2035.7478%2034.1265%2039.9473L28.067%2046.0302L22.0075%2052.1135C17.8242%2056.313%2011.3809%2056.6532%207.616%2052.8737C3.85108%2049.0942%204.19023%2042.626%208.37348%2038.4265L14.4331%2032.3432%22%20stroke%3D%22%231C274C%22%20stroke-width%3D%223.75%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: 10px center; /* Adjust as needed */
+  padding-left: 45px; /* Give space for the icon */
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 .formField__r2Rsf:global(.__wab_instance) {
   width: 100%;
@@ -183,6 +199,14 @@
 .input__gpIhZ:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+  border-radius: 8px;
+  background-color: #16161D;
+  background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2230%22%20height%3D%2231%22%20viewBox%3D%220%200%2060%2061%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22fill-dark-1%20fill-dark-3%20js-on-edit%22%20sf-label%3D%22SVG%20icon%22%20sf-type%3D%22svg%22%20sf-uid%3D%2215%22%20draggable%3D%22true%22%3E%3Cpath%20d%3D%22M25.116%2035.5C21.3511%2031.7205%2021.6902%2025.2522%2025.8735%2021.0527L37.9925%208.88655C42.1757%204.68707%2048.619%204.34662%2052.384%208.12615C56.149%2011.9057%2055.8098%2018.3739%2051.6265%2022.5734L45.567%2028.6565%22%20stroke%3D%22%231C274C%22%20stroke-width%3D%223.75%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M34.884%2025.5C38.649%2029.2795%2038.3098%2035.7478%2034.1265%2039.9473L28.067%2046.0302L22.0075%2052.1135C17.8242%2056.313%2011.3809%2056.6532%207.616%2052.8737C3.85108%2049.0942%204.19023%2042.626%208.37348%2038.4265L14.4331%2032.3432%22%20stroke%3D%22%231C274C%22%20stroke-width%3D%223.75%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: 10px center; /* Adjust as needed */
+  padding-left: 45px; /* Give space for the icon */
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 .button:global(.__wab_instance) {
   max-width: 100%;

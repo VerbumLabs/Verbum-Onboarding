@@ -17,6 +17,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 import Wallet from "../../ThirdWebWallet";
+import sendEmail from "../../../scripts/get-response.ts";
 
 import {
   Flex as Flex__,
@@ -104,6 +105,23 @@ export type PlasmicCareers__OverridesType = {
 export interface DefaultCareersProps {}
 
 const $$ = {};
+
+const handleSubmit = async (values) => {
+  try {
+    const { name, email, message } = values;
+    const response = await sendEmail(name, email, message);
+    if (response) {
+      console.log('Email sent successfully');
+      // Provide feedback or next steps
+    } else {
+      console.log('Failed to send email');
+      // Handle failure case
+    }
+  } catch (error) {
+    console.error('Submission error:', error);
+    // Handle errors more specifically if possible
+  }
+};
 
 function useNextRouter() {
   try {
@@ -263,9 +281,10 @@ function PlasmicCareers__RenderFunc(props: {
                 }}
               />
             </div>
-            <div>
-              <Wallet />
-            </div>
+            <box style={{ paddingBottom: '20px', paddingRight: '24px' }}>
+              <div> <Wallet /> 
+              </div>
+            </box>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg__y0H71)}
               onClick={async event => {
@@ -465,6 +484,7 @@ function PlasmicCareers__RenderFunc(props: {
                     data-plasmic-name={"form"}
                     data-plasmic-override={overrides.form}
                     {...child$Props}
+                    onFinish={handleSubmit}
                   >
                     <FormItemWrapper
                       className={classNames(
@@ -473,6 +493,7 @@ function PlasmicCareers__RenderFunc(props: {
                       )}
                       label={"Name"}
                       name={"name"}
+                      rules={[{ ruleType: "required" }]}
                     >
                       <AntdInput
                         className={classNames(
@@ -488,6 +509,8 @@ function PlasmicCareers__RenderFunc(props: {
                       )}
                       initialValue={``}
                       label={"Email"}
+                      name={"email"}
+                      rules={[{ ruleType: "required" }]}
                     >
                       <AntdInput
                         className={classNames(
@@ -503,6 +526,7 @@ function PlasmicCareers__RenderFunc(props: {
                       )}
                       label={"Message"}
                       name={"message"}
+                      rules={[{ ruleType: "required" }]}
                     >
                       <AntdTextArea
                         className={classNames("__wab_instance", sty.textArea)}

@@ -17,6 +17,10 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 import Wallet from "../../ThirdWebWallet";
+import { useWallet } from "../../WalletContext.js";
+import { useAddress } from "@thirdweb-dev/react";
+import { getVerificationStatus } from "../../../scripts/get-verification-status";
+import sendEmail from "../../../scripts/get-response.ts";
 
 import {
   Flex as Flex__,
@@ -100,6 +104,22 @@ export interface DefaultSellerVerificationProps {}
 
 const $$ = {};
 
+const handleFormSubmit = (walletAddress, sendEmail) => (values) => {
+  const { link1, link2, link3 } = values;
+  const links = [link1, link2, link3].filter(link => link).join(', '); // Filters out empty links and joins them with comma
+  const message = `Received links: ${links}`;
+  
+  sendEmail(walletAddress, walletAddress, message)
+    .then(success => {
+      if (success) {
+        console.log('Message sent successfully');
+      } else {
+        console.log('Failed to send message');
+      }
+    })
+    .catch(error => console.error('Error sending message:', error));
+};
+
 function useNextRouter() {
   try {
     return useRouter();
@@ -126,6 +146,11 @@ function PlasmicSellerVerification__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const address = useAddress();
+  const wallet = useWallet();
+  console.log("wallet uplod wallet", wallet, address);
+  const walletAddress = wallet ? wallet.address : null;
 
   const $globalActions = useGlobalActions?.();
 
@@ -463,13 +488,18 @@ function PlasmicSellerVerification__RenderFunc(props: {
                     data-plasmic-name={"form"}
                     data-plasmic-override={overrides.form}
                     {...child$Props}
+                    onFinish={handleFormSubmit(walletAddress, sendEmail)}
                   >
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
                         sty.formField__rtdr4
                       )}
-                      label={"Link"}
+                      label={"Link(s)"}
+                      textWeight={"bold"}
+                      name={"link1"}
+                      rules={[{ ruleType: "required" }]}
+                      onChange={(e) => console.log(e.target.value)}
                     >
                       <AntdInput
                         className={classNames(
@@ -483,7 +513,8 @@ function PlasmicSellerVerification__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__huYHe
                       )}
-                      label={"Link"}
+                      name={"link2"}
+                      onChange={(e) => console.log(e.target.value)}
                     >
                       <AntdInput
                         className={classNames(
@@ -497,7 +528,8 @@ function PlasmicSellerVerification__RenderFunc(props: {
                         "__wab_instance",
                         sty.formField__r2Rsf
                       )}
-                      label={"Link"}
+                      name={"link3"}
+                      onChange={(e) => console.log(e.target.value)}
                     >
                       <AntdInput
                         className={classNames(

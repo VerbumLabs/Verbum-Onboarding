@@ -16,6 +16,8 @@ import * as React from "react";
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
+import Wallet from "../../ThirdWebWallet";
+import sendEmail from "../../../scripts/get-response.ts";
 
 import {
   Flex as Flex__,
@@ -103,6 +105,23 @@ export type PlasmicContact__OverridesType = {
 export interface DefaultContactProps {}
 
 const $$ = {};
+
+const handleSubmit = async (values) => {
+  try {
+    const { name, email, message } = values;
+    const response = await sendEmail(name, email, message);
+    if (response) {
+      console.log('Email sent successfully');
+      // Provide feedback or next steps
+    } else {
+      console.log('Failed to send email');
+      // Handle failure case
+    }
+  } catch (error) {
+    console.error('Submission error:', error);
+    // Handle errors more specifically if possible
+  }
+};
 
 function useNextRouter() {
   try {
@@ -262,84 +281,10 @@ function PlasmicContact__RenderFunc(props: {
                 }}
               />
             </div>
-            <Button
-              className={classNames("__wab_instance", sty.button__hqr9K)}
-              color={"white"}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToConnect"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/connect` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToConnect"] != null &&
-                  typeof $steps["goToConnect"] === "object" &&
-                  typeof $steps["goToConnect"].then === "function"
-                ) {
-                  $steps["goToConnect"] = await $steps["goToConnect"];
-                }
-              }}
-              submitsForm={true}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___6Z65R
-                )}
-              >
-                {"Connect"}
+            <box style={{ paddingBottom: '20px', paddingRight: '24px' }}>
+              <div> <Wallet /> 
               </div>
-            </Button>
-            <Button
-              className={classNames("__wab_instance", sty.button__lUg1Z)}
-              color={"clear"}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToSignup"] = true
-                  ? (() => {
-                      const actionArgs = { destination: `/signup` };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToSignup"] != null &&
-                  typeof $steps["goToSignup"] === "object" &&
-                  typeof $steps["goToSignup"].then === "function"
-                ) {
-                  $steps["goToSignup"] = await $steps["goToSignup"];
-                }
-              }}
-              submitsForm={true}
-            >
-              {"Signup"}
-            </Button>
+            </box>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg__bZdp)}
               role={"img"}
@@ -495,6 +440,7 @@ function PlasmicContact__RenderFunc(props: {
                     data-plasmic-name={"form"}
                     data-plasmic-override={overrides.form}
                     {...child$Props}
+                    onFinish={handleSubmit}
                   >
                     <FormItemWrapper
                       className={classNames(
@@ -503,6 +449,7 @@ function PlasmicContact__RenderFunc(props: {
                       )}
                       label={"Name"}
                       name={"name"}
+                      rules={[{ ruleType: "required" }]}
                     >
                       <AntdInput
                         className={classNames(
@@ -518,6 +465,8 @@ function PlasmicContact__RenderFunc(props: {
                       )}
                       initialValue={``}
                       label={"Email"}
+                      name={"email"}
+                      rules={[{ ruleType: "required" }]}
                     >
                       <AntdInput
                         className={classNames(
@@ -533,6 +482,7 @@ function PlasmicContact__RenderFunc(props: {
                       )}
                       label={"Message"}
                       name={"message"}
+                      rules={[{ ruleType: "required" }]}
                     >
                       <AntdTextArea
                         className={classNames("__wab_instance", sty.textArea)}

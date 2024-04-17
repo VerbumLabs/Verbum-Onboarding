@@ -10,6 +10,16 @@ import {
   smartWallet,
 } from "@thirdweb-dev/react";
 import { Optimism } from "@thirdweb-dev/chains";
+import { darkTheme, lightTheme } from "@thirdweb-dev/react";
+ 
+const customDarkTheme = darkTheme({
+  fontFamily: "Inter, sans-serif",
+  colors: {
+    modalBg: "#000000",
+    accentText: "red",
+    // ... etc
+  },
+});
 
 const smartWalletOptions = {
   factoryAddress: "0xd7CC4fe0FCAcD12092155F5E1777740EFfcb1329",
@@ -33,7 +43,7 @@ export default function App() {
   >    <WalletProvider>
      
           <ConnectWallet
-            theme={"dark"}
+            theme={customDarkTheme}
             modalSize={"wide"}
             btnTitle="Connect"
           />
