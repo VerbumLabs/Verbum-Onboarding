@@ -1,5 +1,5 @@
 export function getVerificationStatus(walletAddress: string): Promise<boolean> {
-    return fetch(`http://localhost:3001/api/users/${walletAddress}`, {
+    return fetch(`https://janus-kappa.vercel.app/api/users/${walletAddress}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
