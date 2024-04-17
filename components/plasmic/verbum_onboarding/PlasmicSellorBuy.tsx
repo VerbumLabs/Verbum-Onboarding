@@ -32,6 +32,15 @@ import {
   smartWallet,
 } from "@thirdweb-dev/react";
 import { Optimism } from "@thirdweb-dev/chains";
+import { darkTheme, lightTheme } from "@thirdweb-dev/react";
+const customDarkTheme = darkTheme({
+  fontFamily: "Inter, sans-serif",
+  colors: {
+    modalBg: "#000000",
+    accentText: "blue",
+    // ... etc
+  },
+});
 
 const smartWalletOptions = {
   factoryAddress: "0xd7CC4fe0FCAcD12092155F5E1777740EFfcb1329",
@@ -268,77 +277,18 @@ function PlasmicSellorBuy__RenderFunc(props: {
             </box>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg__doOa7)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpstwittercomVerbumLabs"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://twitter.com/VerbumLabs"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpstwittercomVerbumLabs"] != null &&
-                  typeof $steps["goToHttpstwittercomVerbumLabs"] === "object" &&
-                  typeof $steps["goToHttpstwittercomVerbumLabs"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpstwittercomVerbumLabs"] = await $steps[
-                    "goToHttpstwittercomVerbumLabs"
-                  ];
-                }
+              onClick={event => {
+                window.open('https://twitter.com/VerbumLabs', '_blank');
               }}
               role={"img"}
             />
 
             <Icon8Icon
               className={classNames(projectcss.all, sty.svg__nzcOj)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpsdiscordggmmpaM8SJ"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://discord.gg/mmpaM8sJ"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpsdiscordggmmpaM8SJ"] != null &&
-                  typeof $steps["goToHttpsdiscordggmmpaM8SJ"] === "object" &&
-                  typeof $steps["goToHttpsdiscordggmmpaM8SJ"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpsdiscordggmmpaM8SJ"] = await $steps[
-                    "goToHttpsdiscordggmmpaM8SJ"
-                  ];
-                }
+              onClick={event => {
+                window.open('https://discord.gg/cvzUAkzcS7', '_blank');
               }}
+              role={"img"}
               role={"img"}
             />
           </Stack__>
@@ -395,7 +345,7 @@ function PlasmicSellorBuy__RenderFunc(props: {
                                 ]}
                               > 
                                       <ConnectWallet
-                                        theme={"dark"}
+                                        theme={customDarkTheme}
                                         modalSize={"wide"}
                                         btnTitle="Sell on Verbum"
                                         font={"inherit"}
@@ -469,7 +419,7 @@ function PlasmicSellorBuy__RenderFunc(props: {
                                 ]}
                               > 
                                       <ConnectWallet
-                                        theme={"dark"}
+                                        theme={customDarkTheme}
                                         modalSize={"wide"}
                                         btnTitle="Buy on Verbum"
                                         onConnect={async () => {

@@ -205,76 +205,16 @@ function PlasmicHomepage__RenderFunc(props: {
             </box>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg__af9Kn)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpstwittercomVerbumLabs"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://twitter.com/VerbumLabs"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpstwittercomVerbumLabs"] != null &&
-                  typeof $steps["goToHttpstwittercomVerbumLabs"] === "object" &&
-                  typeof $steps["goToHttpstwittercomVerbumLabs"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpstwittercomVerbumLabs"] = await $steps[
-                    "goToHttpstwittercomVerbumLabs"
-                  ];
-                }
+              onClick={event => {
+                window.open('https://twitter.com/VerbumLabs', '_blank');
               }}
               role={"img"}
             />
 
             <Icon8Icon
               className={classNames(projectcss.all, sty.svg__sCnT)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpsdiscordggcvzUAkzcS7"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://discord.gg/cvzUAkzcS7"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpsdiscordggcvzUAkzcS7"] != null &&
-                  typeof $steps["goToHttpsdiscordggcvzUAkzcS7"] === "object" &&
-                  typeof $steps["goToHttpsdiscordggcvzUAkzcS7"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpsdiscordggcvzUAkzcS7"] = await $steps[
-                    "goToHttpsdiscordggcvzUAkzcS7"
-                  ];
-                }
+              onClick={event => {
+                window.open('https://discord.gg/cvzUAkzcS7', '_blank');
               }}
               role={"img"}
             />
@@ -290,7 +230,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.h1__uDnbm
                   )}
                 >
-                  {"Don't just sell luxury, make recurring revenue"}
+                  {"Don't just sell luxury. Create lasting wealth."}
                 </h1>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox___8WQhi)}>
@@ -354,16 +294,15 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(sty.img__n5Wt9)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
-                displayMaxWidth={"80%"}
+                displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/verbum_onboarding/images/laurenzHeymannAl6S6JpnZisUnsplashjpg.jpg",
-                  fullWidth: 6000,
-                  fullHeight: 4000,
-                  aspectRatio: undefined
+                  src: "/plasmic/verbum_onboarding/images/silverRolex.png",
+                  fullWidth: 450,
+                  fullHeight: 650,
                 }}
               />
             </div>
@@ -389,7 +328,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                 >
                   {
-                    "Spend more time enjoying your love for luxury and less time figuring out how to pay for it."
+                    "Spend more time loving luxury and less time figuring out how to pay for it."
                   }
                 </div>
               </div>
@@ -411,7 +350,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ fontWeight: 700 }}
                       >
-                        {"Turn any luxury good into a tradable digital asset"}
+                        {"Make any luxury good a tradable digital asset"}
                       </span>
                     </React.Fragment>
                   </div>
@@ -425,7 +364,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "Verbum utilizes blockchain technology to seamlessly trade digital representations of your items, enabling you to earn real money."
+                      "Verbum leverages the blockchain to seamlessly trade digital representations of luxury products, enabling you to earn passive income."
                     }
                   </div>
                 </div>
@@ -449,7 +388,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "After you place your item on Verbum and sell it, users can choose to sell it again on our marketplace. You will earn royalties of up to 10% from each and every sale of your item's digital representation. "
+                      "After you list and sell your luxury goods on Verbum, you can continue to earn royalties of up to 10% from every sale of the digital representation."
                     }
                   </div>
                 </div>
@@ -472,7 +411,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                 >
                   {
-                    "Choose a shipping date up to two months after initially listing your item on Verbum. You'll ship the item to the current owner of its digital representation at that selected time."
+                    "Choose a shipping date up to a year after initially listing your item on Verbum. You'll ship the item to the current owner of its digital representation at that selected time."
                   }
                 </div>
               </div>
@@ -494,7 +433,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                 >
                   {
-                    "Businesses and individuals with a track record of sales can sell with Verbum. "
+                    "Trusted luxury resellers are invited to apply to the Verbum community."
                   }
                 </div>
               </div>
@@ -504,16 +443,16 @@ function PlasmicHomepage__RenderFunc(props: {
                 alt={""}
                 className={classNames(sty.img__egPpn)}
                 displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"80%"}
+                displayMaxHeight={"100%"}
+                displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/verbum_onboarding/images/offWhiteAirJordan1TheTenAa383410140E45F5B87Fa64B48A54410Bca1Da5B31Jpg.jpg",
-                  fullWidth: 900,
-                  fullHeight: 637,
+                  src: "/plasmic/verbum_onboarding/images/aj.png",
+                  fullWidth: 800,
+                  fullHeight: 500,
                   aspectRatio: undefined
                 }}
               />
@@ -570,7 +509,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {
-                  "Verbum abstracts away all of the confusing parts of crypto, making for a simple and easy-to-use platform."
+                  "For sellers, Verbum elegantly simplifies the complexities of cryptocurrency, offering a refined and user-friendly platform."
                 }
               </div>
             </div>
@@ -597,7 +536,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {
-                  "You know you've got something valuable... we'll help you make the most from its sale. Verbum is designed to make the resale of hot items even hotter."
+                  "You know the value of luxury; we'll help you make the most from its sale. Verbum creates global reach for the most in-demand luxury goods."
                 }
               </div>
             </div>
@@ -624,7 +563,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {
-                  "Verbum is built by Stanford-educated engineers with experience at some of the world's best companies."
+                  "Verbum is built by Stanford-educated engineers with experience at the forefront of crypto, consulting, finance, and venture."
                 }
               </div>
             </div>
@@ -639,19 +578,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.h1__wwlCx
                 )}
               >
-                {"What can you sell?"}
+                {"Sell High-End, Limited, or Viral Products"}
               </h1>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__j4Zfh
-                )}
-              >
-                {
-                  "You can sell any high-end, limited, or viral products on Verbum."
-                }
-              </div>
+
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__xbw1E)}>
@@ -691,7 +620,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {
-                  "Rolex, Audemars Piguet, Patek Philippe, Vacheron Constantin\u2014you name it, we'll help you sell it. "
+                  "Rolex, Audemars Piguet, Patek Philippe, Vacheron Constantin, and more. "
                 }
               </div>
             </div>
@@ -707,7 +636,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/verbum_onboarding/images/_10003268002Jpg.jpg",
+                  src: "/plasmic/verbum_onboarding/images/birkin.png",
                   fullWidth: 1200,
                   fullHeight: 1200,
                   aspectRatio: undefined
@@ -731,7 +660,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {
-                  "Into luxury bags? Monetize your obsession for Herm\u00e8s, Chanel, Louis Vuitton, Gucci and others. "
+                  "Collect luxury bags? Monetize your obsession for Herm\u00e8s, Chanel, Louis Vuitton, Gucci and others. "
                 }
               </div>
             </div>
@@ -747,7 +676,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 displayWidth={"auto"}
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/verbum_onboarding/images/q74K5Z5Smf1Lqz7Rianwjpeg.jpg",
+                  src: "/plasmic/verbum_onboarding/images/martin.png",
                   fullWidth: 620,
                   fullHeight: 596,
                   aspectRatio: undefined
@@ -797,7 +726,7 @@ function PlasmicHomepage__RenderFunc(props: {
               )}
             >
               {
-                "Our fees are about 75% less than those of other resale platforms. Discover how \nVerbum can maximize your earnings today.\n"
+                "Our fees are about 75% less than other resale platforms. Discover how \nVerbum can maximize your earnings.\n"
               }
             </div>
           </div>

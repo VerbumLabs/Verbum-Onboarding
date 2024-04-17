@@ -1,5 +1,5 @@
 export default function sendEmail(name: string, email: string, message: string): Promise<boolean> {
-    return fetch(`https://janus-kappa.vercel.app/send-email`, {
+    return fetch(`http:localhost:3001/send-email`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

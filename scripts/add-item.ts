@@ -1,5 +1,5 @@
 export function submitItem(itemData: any): Promise<any> {
-    return fetch('https://janus-kappa.vercel.app/api/items', {
+    return fetch('http:localhost:3001/api/items', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

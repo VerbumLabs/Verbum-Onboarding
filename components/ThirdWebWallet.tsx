@@ -16,7 +16,7 @@ const customDarkTheme = darkTheme({
   fontFamily: "Inter, sans-serif",
   colors: {
     modalBg: "#000000",
-    accentText: "red",
+    accentText: "blue",
     // ... etc
   },
 });
@@ -46,6 +46,7 @@ export default function App() {
             theme={customDarkTheme}
             modalSize={"wide"}
             btnTitle="Connect"
+            modalTitle="Connect to Verbum"
           />
     </WalletProvider>
       </ThirdwebProvider>

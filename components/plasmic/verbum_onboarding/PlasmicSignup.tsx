@@ -228,77 +228,18 @@ function PlasmicSignup__RenderFunc(props: {
             </div>
             <Icon7Icon
               className={classNames(projectcss.all, sty.svg__vy2BD)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpstwittercomVerbumLabs"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://twitter.com/VerbumLabs"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpstwittercomVerbumLabs"] != null &&
-                  typeof $steps["goToHttpstwittercomVerbumLabs"] === "object" &&
-                  typeof $steps["goToHttpstwittercomVerbumLabs"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpstwittercomVerbumLabs"] = await $steps[
-                    "goToHttpstwittercomVerbumLabs"
-                  ];
-                }
+              onClick={event => {
+                window.open('https://twitter.com/VerbumLabs', '_blank');
               }}
               role={"img"}
             />
 
             <Icon8Icon
               className={classNames(projectcss.all, sty.svg__iMjky)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["goToHttpsdiscordggcvzUAkzcS7"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        destination: "https://discord.gg/cvzUAkzcS7"
-                      };
-                      return (({ destination }) => {
-                        if (
-                          typeof destination === "string" &&
-                          destination.startsWith("#")
-                        ) {
-                          document
-                            .getElementById(destination.substr(1))
-                            .scrollIntoView({ behavior: "smooth" });
-                        } else {
-                          __nextRouter?.push(destination);
-                        }
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["goToHttpsdiscordggcvzUAkzcS7"] != null &&
-                  typeof $steps["goToHttpsdiscordggcvzUAkzcS7"] === "object" &&
-                  typeof $steps["goToHttpsdiscordggcvzUAkzcS7"].then ===
-                    "function"
-                ) {
-                  $steps["goToHttpsdiscordggcvzUAkzcS7"] = await $steps[
-                    "goToHttpsdiscordggcvzUAkzcS7"
-                  ];
-                }
+              onClick={event => {
+                window.open('https://discord.gg/cvzUAkzcS7', '_blank');
               }}
+              role={"img"}
               role={"img"}
             />
           </Stack__>

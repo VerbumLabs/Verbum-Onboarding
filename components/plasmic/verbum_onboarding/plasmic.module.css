@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .plasmic_tokens {
   --token-wqPUXGRVCBx0: 24px;
@@ -16,7 +16,7 @@
 }
 
 .plasmic_default_styles {
-  --mixin-GXx2AuAGzAHG_font-family: "Inter", sans-serif;
+  --mixin-GXx2AuAGzAHG_font-family: "Poppins", sans-serif;
   --mixin-GXx2AuAGzAHG_font-size: 16px;
   --mixin-GXx2AuAGzAHG_font-weight: 400;
   --mixin-GXx2AuAGzAHG_font-style: normal;
